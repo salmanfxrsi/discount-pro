@@ -1,0 +1,5 @@
+.bg-winter{
+    background-image: url("/src/assets/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
