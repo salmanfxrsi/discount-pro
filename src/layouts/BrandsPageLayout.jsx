@@ -7,10 +7,10 @@ const BrandsPageLayout = () => {
 
   return (
     <div>
-      <header className="container mx-auto">
+      <header className="w-11/12 lg:container mx-auto">
         <BrandsPageHeader></BrandsPageHeader>
       </header>
-      <main className="grid grid-cols-1 container mx-auto gap-6 mt-12">
+      <main className="grid grid-cols-1 w-11/12 lg:container mx-auto gap-6 mt-12">
         {shops.map(shop => <ShopCard key={shop._id} shop={shop}></ShopCard>)}
       </main>
     </div>
