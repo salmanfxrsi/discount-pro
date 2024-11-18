@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Link, useLoaderData } from "react-router-dom";
 import ReactStars from "react-stars";
@@ -7,8 +8,10 @@ const BrandDetails = () => {
   const { brand_name, rating, brand_logo, coupons, shop_Link } =
     useLoaderData();
 
-    const successToast = () => toast("hello")
 
+  useEffect(() => {
+    document.title = `Discount Pro - ${brand_name}`;
+  }, [brand_name]);
 
   return (
     <div className="flex justify-center">
@@ -23,9 +26,9 @@ const BrandDetails = () => {
           <div>
             <h1 className="text-3xl font-bold">{brand_name}</h1>
             <div className="flex items-center gap-1 text-yellow-400 font-black">
-            <ReactStars value={rating}></ReactStars>
-            <span className="ml-1">{rating}</span>
-          </div>
+              <ReactStars value={rating}></ReactStars>
+              <span className="ml-1">{rating}</span>
+            </div>
           </div>
         </div>
 
@@ -50,7 +53,10 @@ const BrandDetails = () => {
               </p>
 
               <CopyToClipboard text={coupon.coupon_code}>
-                <button onClick={successToast()} className="bg-[#2C8BBF] text-white py-2 mt-2 rounded hover:bg-[#2c8cbfbe] w-full">
+                <button
+                onClick={()=>toast.success("Promo Code Copied")}
+                  className="bg-[#2C8BBF] text-white py-2 mt-2 rounded hover:bg-[#2c8cbfbe] w-full"
+                >
                   Copy Code
                 </button>
               </CopyToClipboard>
