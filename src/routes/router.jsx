@@ -5,11 +5,13 @@ import BrandsPageLayout from "../layouts/BrandsPageLayout";
 import ProfilePageLayout from "../layouts/ProfilePageLayout";
 import DevPageLayout from "../layouts/DevPageLayout";
 import BrandDetailsPage from "../components/BrandDetailsPage";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: "/",
