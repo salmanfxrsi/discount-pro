@@ -1,9 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import BrandsPageHeader from "../components/BrandsPageComponent/BrandsPageHeader";
 import ShopCard from "../components/BrandsPageComponent/ShopCard";
+import { useEffect } from "react";
 
 const BrandsPageLayout = () => {
   const shops = useLoaderData();
+
+  useEffect(() => {
+    document.title = "Discount Pro - Brands"
+  },[])
 
   return (
     <div>
