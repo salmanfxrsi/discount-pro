@@ -11,7 +11,7 @@ const BrandsPageLayout = () => {
   },[])
 
   return (
-    <div>
+    <div className="py-24 winter-snow">
       <header className="w-11/12 lg:container mx-auto">
         <BrandsPageHeader></BrandsPageHeader>
       </header>

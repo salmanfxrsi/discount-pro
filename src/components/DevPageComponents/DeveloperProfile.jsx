@@ -4,7 +4,7 @@ import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 
 const DeveloperProfile = () => {
   return (
-    <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md lg:max-w-3xl w-11/12 mx-auto">
+    <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg shadow-md lg:max-w-3xl w-11/12 mx-auto bg-winter">
       <img
         src={mainDeveloper}
         alt="Developer"

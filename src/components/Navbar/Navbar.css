@@ -1,0 +1,6 @@
+.bg-winter-navbar{
+    background-image: url("/src/assets/banner.jpg");
+}
+.active{
+    color: black;
+}

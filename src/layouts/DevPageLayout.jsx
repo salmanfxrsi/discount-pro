@@ -7,7 +7,7 @@ const DevPageLayout = () => {
       },[])
 
     return (
-        <div>
+        <div className="py-24 winter-snow">
             <DeveloperProfile></DeveloperProfile>
         </div>
     );

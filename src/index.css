@@ -1,3 +1,7 @@
+.winter-snow{
+    background-image: url("../src/assets/effect.avif")
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

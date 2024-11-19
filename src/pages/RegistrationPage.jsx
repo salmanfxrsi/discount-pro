@@ -1,22 +1,33 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { createUser,user,setUser } = useContext(AuthContext);
 
   const handleRegistration = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email,password)
+    
+    createUser(email,password)
+    .then(result => {
+        setUser(result.user)
+        console.log(user)
+    })
+    .then(error => {
+        console.log(error)
+    });
+    
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-700">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 winter-snow">
+      <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg bg-winter">
+        <h2 className="text-3xl font-bold text-center text-white">
           Register
         </h2>
         <form onSubmit={handleRegistration} className="mt-6 space-y-4">

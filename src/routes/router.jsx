@@ -8,6 +8,7 @@ import BrandDetailsPage from "../components/BrandDetailsPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import LoginPage from "../pages/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         },
         {
             path: "/profile",
-            element: <ProfilePageLayout></ProfilePageLayout>
+            element: <PrivateRoute><ProfilePageLayout></ProfilePageLayout></PrivateRoute>
         },
         {
             path: "/developer",
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/brand/:id",
-          element: <BrandDetailsPage></BrandDetailsPage>,
+          element: ( <PrivateRoute><BrandDetailsPage></BrandDetailsPage></PrivateRoute> ),
           loader: async({params}) => {
             const response = await fetch("/CouponData.json")
             const data = await response.json()

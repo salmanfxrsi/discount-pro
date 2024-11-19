@@ -3,9 +3,11 @@ import logo from "../../assets/logo.webp";
 import { FaDev, FaHome } from "react-icons/fa";
 import { GiShoppingBag } from "react-icons/gi";
 import { AiFillProfile } from "react-icons/ai";
-import "../Header/Header.css";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   const links = (
     <>
       <NavLink
@@ -44,12 +46,11 @@ const Header = () => {
       <div className="hero-content flex-col lg:flex-row gap-8">
         <img src={logo} className="max-w-sm rounded-lg shadow-2xl" />
         <div>
-          <h1 className="text-3xl lg:text-5xl font-black text-[#2C8BBF] text-center">
-            {" "}
-            Grab Your Coupons!
+          <h1 className="text-2xl lg:text-5xl font-black text-[#2C8BBF] text-center">
+            {user && `Hey ${user.displayName}`}
           </h1>
           <h1 className="text-2xl font-black mt-3 text-center text-[#2C8BBF]">
-            salmanxprivate@gmail.com
+            Grab Your Coupons!
           </h1>
           <div className="navbar-center flex mt-4 justify-center">
             <div className="menu-horizontal gap-3 flex-wrap justify-center">

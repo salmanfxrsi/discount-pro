@@ -14,8 +14,8 @@ const BrandDetails = () => {
   }, [brand_name]);
 
   return (
-    <div className="flex justify-center">
-      <div className="p-4">
+    <div className="flex justify-center py-24 winter-snow">
+      <div className="p-4 bg-winter rounded-lg">
         {/* Brand Header */}
         <div className="flex items-center mb-6">
           <img
@@ -37,7 +37,7 @@ const BrandDetails = () => {
           {coupons.map((coupon, index) => (
             <div
               key={index}
-              className="border rounded-lg p-4 shadow-md flex flex-col justify-between h-full"
+              className="border rounded-lg p-4 shadow-md flex flex-col justify-between h-full bg-white"
             >
               <h2 className="text-xl font-semibold mb-2">
                 {coupon.description}

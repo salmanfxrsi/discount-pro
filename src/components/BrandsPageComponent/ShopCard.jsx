@@ -6,7 +6,7 @@ const ShopCard = ({ shop }) => {
   const { _id, brand_logo, brand_name, rating, description, isSaleOn } = shop;
 
   return (
-    <div className="border p-4 rounded-lg shadow-md flex items-center">
+    <div className="border p-4 rounded-lg shadow-md flex items-center bg-winter">
       {/* Brand Logo */}
       <img
         src={brand_logo}
@@ -17,13 +17,13 @@ const ShopCard = ({ shop }) => {
       {/* Middle Section */}
       <div className="flex-1">
         <div className="flex lg:items-center flex-col lg:flex-row">
-          <span className="text-xl font-semibold mr-2">{brand_name}</span>
+          <span className="text-xl font-black mr-2 text-white">{brand_name}</span>
           <div className="flex items-center gap-1 text-yellow-400 font-black">
             <ReactStars value={rating}></ReactStars>
             <span className="ml-1">{rating}</span>
           </div>
         </div>
-        <p className="text-gray-600 mt-1">{description}</p>
+        <p className="text-white mt-1 font-bold">{description}</p>
       </div>
 
       {/* Right Section */}
@@ -32,7 +32,7 @@ const ShopCard = ({ shop }) => {
           View Coupons
         </Link>
         {isSaleOn && (
-          <div className="mt-2 text-[#2C8BBF] font-bold animate-bounce">
+          <div className="mt-2 text-white font-bold animate-bounce">
             Sale is on!
           </div>
         )}

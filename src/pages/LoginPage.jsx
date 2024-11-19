@@ -1,27 +1,32 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { handleGoogleSignIn,handleLogin,setUser } = useContext(AuthContext);
 
   const handleEmailLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email,password)
+    handleLogin(email,password)
+    .then(result => {
+        setUser(result.user);
+    })
+    .catch(error => {
+        console.log(error);
+    })
   };
 
-  const handleGoogleLogin = () => {
-    console.log("Google Login Triggered");
-  };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
-        <h2 className="text-2xl font-bold text-center text-gray-700">Login</h2>
+    <div className="flex items-center justify-center min-h-screen winter-snow">
+      <div className="w-full max-w-md p-6 bg-winter rounded-lg shadow-lg">
+        <h2 className="text-2xl font-bold text-center text-white">Login</h2>
         <form onSubmit={handleEmailLogin} className="mt-4">
           <div className="mb-4">
             <label
@@ -81,13 +86,13 @@ const LoginPage = () => {
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-300"></div>
           </div>
-          <div className="relative flex justify-center text-sm text-gray-600 bg-white">
-            <span className="px-2 bg-white">OR</span>
+          <div className="relative flex justify-center text-sm text-gray-600">
+            <span className="px-2 font-black">OR</span>
           </div>
         </div>
         <div className="flex flex-col gap-2">
           <button
-            onClick={handleGoogleLogin}
+            onClick={handleGoogleSignIn}
             className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-600"
           >
             <FaGoogle className="mr-2" />
