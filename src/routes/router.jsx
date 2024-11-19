@@ -6,6 +6,8 @@ import ProfilePageLayout from "../layouts/ProfilePageLayout";
 import DevPageLayout from "../layouts/DevPageLayout";
 import BrandDetailsPage from "../components/BrandDetailsPage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import LoginPage from "../pages/LoginPage";
+import RegistrationPage from "../pages/RegistrationPage";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
             const singleShopData = data.find(singleShop => singleShop._id == params.id)
             return singleShopData
           }
+        },
+        {
+          path: "/login",
+          element: <LoginPage></LoginPage>
+        },
+        {
+          path: "/registration",
+          element: <RegistrationPage></RegistrationPage>
         }
       ]
     },
