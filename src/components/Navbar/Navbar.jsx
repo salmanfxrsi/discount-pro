@@ -46,7 +46,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-winter-navbar py-2">
-      <div className="navbar">
+      <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn lg:hidden">
@@ -72,7 +72,7 @@ const Navbar = () => {
               {links}
             </div>
           </div>
-          <Link to={"/"} className="text-xl font-black text-white">
+          <Link to={"/"} className="ml-4 lg:ml-0 text-xl font-black text-white">
             Discount Pro
           </Link>
         </div>

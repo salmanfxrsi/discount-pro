@@ -18,7 +18,13 @@ const router = createBrowserRouter([
       children: [
         {
             path: "/",
-            element: <HomePageLayout></HomePageLayout>
+            element: <HomePageLayout></HomePageLayout>,
+            loader: async() => {
+              const res = await fetch("/CouponData.json")
+              const data = await res.json()
+              const onSaleShop = data.filter(shop => shop.isSaleOn)
+              return {onSaleShop,data}
+            }
         },
         {
             path: "/brands",
