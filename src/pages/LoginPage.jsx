@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,6 +19,9 @@ const LoginPage = () => {
     handleLogin(email,password)
     .then(result => {
         setUser(result.user);
+        toast.success("Welcome back! Login successful",{
+          className: "custom-toast"
+        })
         navigate("/");
         e.target.reset();
     })
@@ -32,6 +36,9 @@ const LoginPage = () => {
     googleSignIn()
     .then((result) => {
       setUser(result.user);
+      toast.success("Welcome back! Login successful",{
+        className: "custom-toast"
+      })
       navigate("/")
     })
     .catch((error) => {

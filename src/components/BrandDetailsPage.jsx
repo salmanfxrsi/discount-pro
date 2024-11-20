@@ -54,7 +54,9 @@ const BrandDetails = () => {
 
               <CopyToClipboard text={coupon.coupon_code}>
                 <button
-                onClick={()=>toast.success("Promo Code Copied")}
+                onClick={()=>toast.success("Promo Code Copied",{
+                  className: "custom-toast"
+                })}
                   className="bg-[#2C8BBF] text-white py-2 mt-2 rounded hover:bg-[#2c8cbfbe] w-full"
                 >
                   Copy Code

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,6 +39,9 @@ const RegistrationPage = () => {
         setError("");
         e.target.reset();
         setSuccess("Registered Successfully");
+        toast.success("Welcome! Registration successful",{
+          className: "custom-toast"
+        })
         navigate("/");
       })
       .then((error) => {

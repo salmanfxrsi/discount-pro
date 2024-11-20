@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UpdateProfilePage = () => {
   const { manageProfile } = useContext(AuthContext);
@@ -13,6 +14,9 @@ const UpdateProfilePage = () => {
     manageProfile(name,image)
     .then(() => {
         e.target.reset();
+        toast.success("Profile Updated",{
+          className: "custom-toast"
+        })
         navigate("/profile");
     })
   };
