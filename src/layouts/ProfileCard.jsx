@@ -18,7 +18,7 @@ const ProfileCard = () => {
       />
       <h1 className="text-2xl font-black text-gray-800">{user?.displayName}</h1>
       <h1 className="text-xl font-black text-gray-800">{user?.email}</h1>
-      <Link className="px-4 bg-[#2C8BBF] text-white py-2 mt-4 rounded-lg font-semibold hover:bg-[#2c8cbfbe] transition mx-auto block text-center">
+      <Link to={"/update-profile"} className="px-4 bg-[#2C8BBF] text-white py-2 mt-4 rounded-lg font-semibold hover:bg-[#2c8cbfbe] transition mx-auto block text-center">
         Update Your Profile
       </Link>
     </div>

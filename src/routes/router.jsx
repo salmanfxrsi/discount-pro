@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import LoginPage from "../pages/LoginPage";
 import RegistrationPage from "../pages/RegistrationPage";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfilePage from "../pages/UpdateProfilePage";
 
 const router = createBrowserRouter([
     {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/brand/:id",
-          element: ( <PrivateRoute><BrandDetailsPage></BrandDetailsPage></PrivateRoute> ),
+          element: <PrivateRoute><BrandDetailsPage></BrandDetailsPage></PrivateRoute>,
           loader: async({params}) => {
             const response = await fetch("/CouponData.json")
             const data = await response.json()
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         {
           path: "/registration",
           element: <RegistrationPage></RegistrationPage>
+        },
+        {
+          path: "/update-profile",
+          element: <UpdateProfilePage></UpdateProfilePage>
         }
       ]
     },

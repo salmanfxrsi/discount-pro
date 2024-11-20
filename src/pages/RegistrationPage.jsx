@@ -5,9 +5,9 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser,setUser } = useContext(AuthContext);
-  const [error,setError] = useState("");
-  const [success,setSuccess] = useState("");
+  const { createUser, setUser, manageProfile } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
   const handleRegistration = (e) => {
@@ -15,41 +15,40 @@ const RegistrationPage = () => {
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
+    const name = form.get("name");
+    const image = form.get("image");
 
     // Password must be more more than 5 Letters
-    if(password.length < 6){
-      setError("")
-      setError("Length must be at least 6 character")
-      return
+    if (password.length < 6) {
+      setError("");
+      setError("Length must be at least 6 character");
+      return;
     }
 
     // Regex of password must contain at least one uppercase and one lowercase letter.
-    if(!/^(?=.*[A-Z])(?=.*[a-z]).*$/.test(password)){
-      setError("Password must have both uppercase and lowercase letters.")
-      return
+    if (!/^(?=.*[A-Z])(?=.*[a-z]).*$/.test(password)) {
+      setError("Password must have both uppercase and lowercase letters.");
+      return;
     }
 
-    
-    createUser(email,password)
-    .then(result => {
+    createUser(email, password)
+      .then((result) => {
+        manageProfile(name, image);
         setUser(result.user);
         setError("");
         e.target.reset();
         setSuccess("Registered Successfully");
-        navigate("/")
-    })
-    .then(error => {
-        console.log(error)
-    });
-    
+        navigate("/");
+      })
+      .then((error) => {
+        setError(error.message);
+      });
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 winter-snow">
       <div className="lg:w-full w-11/12 max-w-lg p-6 bg-white rounded-lg shadow-lg bg-winter">
-        <h2 className="text-3xl font-bold text-center text-white">
-          Register
-        </h2>
+        <h2 className="text-3xl font-bold text-center text-white">Register</h2>
         <form onSubmit={handleRegistration} className="mt-6 space-y-4">
           {/* Name */}
           <div>
@@ -97,7 +96,7 @@ const RegistrationPage = () => {
             </label>
             <input
               type="text"
-              name="photoURL"
+              name="image"
               autoComplete="off"
               placeholder="Enter your photo URL"
               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded-md focus:outline-none focus:ring focus:ring-indigo-300"

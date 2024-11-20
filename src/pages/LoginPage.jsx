@@ -6,7 +6,7 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { handleGoogleSignIn,handleLogin,setUser } = useContext(AuthContext);
+  const { googleSignIn,handleLogin,setUser } = useContext(AuthContext);
   const [error,setError] = useState("");
   const navigate = useNavigate();
 
@@ -27,6 +27,17 @@ const LoginPage = () => {
          return;
     })
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+    .then((result) => {
+      setUser(result.user);
+      navigate("/")
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
 
 
   return (
