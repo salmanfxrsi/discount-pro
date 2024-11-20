@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import ProfileCard from "./ProfileCard";
 
 const ProfilePageLayout = () => {
     useEffect(() => {
@@ -6,8 +7,10 @@ const ProfilePageLayout = () => {
       },[])
 
     return (
-        <div>
-            
+        <div className="winter-snow py-24">
+            <main>
+                <ProfileCard></ProfileCard>
+            </main>
         </div>
     );
 };

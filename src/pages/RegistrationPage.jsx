@@ -1,22 +1,42 @@
 import { useContext, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser,user,setUser } = useContext(AuthContext);
+  const { createUser,setUser } = useContext(AuthContext);
+  const [error,setError] = useState("");
+  const [success,setSuccess] = useState("");
+  const navigate = useNavigate();
 
   const handleRegistration = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const email = form.get("email");
     const password = form.get("password");
+
+    // Password must be more more than 5 Letters
+    if(password.length < 6){
+      setError("")
+      setError("Length must be at least 6 character")
+      return
+    }
+
+    // Regex of password must contain at least one uppercase and one lowercase letter.
+    if(!/^(?=.*[A-Z])(?=.*[a-z]).*$/.test(password)){
+      setError("Password must have both uppercase and lowercase letters.")
+      return
+    }
+
     
     createUser(email,password)
     .then(result => {
-        setUser(result.user)
-        console.log(user)
+        setUser(result.user);
+        setError("");
+        e.target.reset();
+        setSuccess("Registered Successfully");
+        navigate("/")
     })
     .then(error => {
         console.log(error)
@@ -26,7 +46,7 @@ const RegistrationPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 winter-snow">
-      <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-lg bg-winter">
+      <div className="lg:w-full w-11/12 max-w-lg p-6 bg-white rounded-lg shadow-lg bg-winter">
         <h2 className="text-3xl font-bold text-center text-white">
           Register
         </h2>
@@ -112,6 +132,10 @@ const RegistrationPage = () => {
               )}
             </button>
           </div>
+
+          {/* Error Messages */}
+          <p className="text-red-500 font-black text-sm">{error && error}</p>
+          <p className="text-black font-black text-sm">{success && success}</p>
 
           {/* Register Button */}
           <button

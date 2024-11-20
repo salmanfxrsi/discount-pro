@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { handleGoogleSignIn,handleLogin,setUser } = useContext(AuthContext);
+  const [error,setError] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailLogin = (e) => {
     e.preventDefault();
@@ -16,16 +18,20 @@ const LoginPage = () => {
     handleLogin(email,password)
     .then(result => {
         setUser(result.user);
+        navigate("/");
+        e.target.reset();
     })
     .catch(error => {
-        console.log(error);
+         setError('');
+         setError(error.message);
+         return;
     })
   };
 
 
   return (
     <div className="flex items-center justify-center min-h-screen winter-snow">
-      <div className="w-full max-w-md p-6 bg-winter rounded-lg shadow-lg">
+      <div className="lg:w-full w-11/12 max-w-md p-6 bg-winter rounded-lg shadow-lg">
         <h2 className="text-2xl font-bold text-center text-white">Login</h2>
         <form onSubmit={handleEmailLogin} className="mt-4">
           <div className="mb-4">
@@ -69,6 +75,8 @@ const LoginPage = () => {
               )}
             </button>
           </div>
+          {/* Error Messages */}
+          <p className="text-red-500 font-black text-sm mb-3">{error && error}</p>
           <button
             type="submit"
             className="w-full px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"

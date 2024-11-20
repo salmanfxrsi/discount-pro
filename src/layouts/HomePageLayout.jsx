@@ -16,7 +16,7 @@ const HomePageLayout = () => {
 
   return (
     <div className="winter-snow">
-      <header className="mx-auto container py-24">
+      <header className="mx-auto w-11/12 lg:container py-24">
         <BannerSlider></BannerSlider>
       </header>
       <main className="pb-24">
