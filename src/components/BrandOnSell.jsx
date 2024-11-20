@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import 'aos/dist/aos.css';
 
 const BrandOnSellCard = ({ brand }) => {
   const { _id, brand_logo, brand_name, coupons, category } = brand;
+
+
 
   return (
     <div className="rounded-lg shadow-md hover:shadow-lg transition-shadow p-4 bg-winter">

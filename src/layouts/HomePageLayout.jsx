@@ -15,8 +15,8 @@ const HomePageLayout = () => {
   }, []);
 
   return (
-    <div className="winter-snow">
-      <header className="mx-auto w-11/12 lg:container py-24">
+    <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600" className="winter-snow">
+      <header  data-aos="fade-up" data-aos-anchor-placement="top-center" className="mx-auto w-11/12 lg:container py-24">
         <BannerSlider></BannerSlider>
       </header>
       <main className="pb-24">
