@@ -41,9 +41,6 @@ const HomePageLayout = () => {
             </div>
           </Marquee>
         </section>
-        <section className="w-11/12 lg:container mx-auto mb-24">
-          <Stat data={data} onSaleShop={onSaleShop}></Stat>
-        </section>
         {/* Brands On Sell Section */}
         <section className="w-11/12 lg:container mx-auto">
           <h1 className="font-black text-3xl text-black text-center mb-16">
@@ -54,6 +51,9 @@ const HomePageLayout = () => {
               <BrandOnSellCard key={brand._id} brand={brand}></BrandOnSellCard>
             ))}
           </div>
+        </section>
+        <section className="w-11/12 lg:container mx-auto my-24">
+          <Stat data={data} onSaleShop={onSaleShop}></Stat>
         </section>
         <section className="mt-24">
           <OurMotive></OurMotive>

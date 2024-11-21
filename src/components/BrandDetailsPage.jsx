@@ -15,7 +15,7 @@ const BrandDetails = () => {
 
   return (
     <div className="flex justify-center py-24 winter-snow">
-      <div className="p-4 bg-winter rounded-lg">
+      <div className="p-4 bg-winter rounded-lg w-11/12 lg:w-auto">
         {/* Brand Header */}
         <div className="flex items-center mb-6">
           <img

@@ -1,184 +1,464 @@
 [
-    {
-      "_id": "1a2b3c4d5e6f7g8h9i0j",
-      "brand_name": "ShopEase",
-      "rating": 4.5,
-      "description": "ShopEase offers a variety of daily essentials at unbeatable prices.",
-      "brand_logo": "https://i.ibb.co.com/CbdtCvH/download.jpg",
-      "coupons": [
-        {
-          "coupon_code": "SE10OFF",
-          "description": "Get 10% off on your first purchase",
-          "expiry_date": "2024-12-31",
-          "condition": "Minimum purchase of $20",
-          "coupon_type": "Percentage"
-        },
-        {
-          "coupon_code": "FREESHIP",
-          "description": "Free shipping on orders over $50",
-          "expiry_date": "2024-11-30",
-          "condition": "Valid for standard shipping",
-          "coupon_type": "Shipping"
-        }
-      ],
-      "shop_Link": "https://shopease.com",
-      "category": "Groceries",
-      "isSaleOn": true
-    },
-    {
-      "_id": "2b3c4d5e6f7g8h9i0j1a",
-      "brand_name": "TechNova",
-      "rating": 4.7,
-      "description": "TechNova is your destination for the latest tech gadgets and accessories.",
-      "brand_logo": "https://i.ibb.co.com/M9309dh/images.jpg",
-      "coupons": [
-        {
-          "coupon_code": "TN20SAVE",
-          "description": "Save 20% on all electronics",
-          "expiry_date": "2025-01-15",
-          "condition": "No minimum purchase",
-          "coupon_type": "Percentage"
-        },
-        {
-          "coupon_code": "BOGOFREE",
-          "description": "Buy one, get one free on select items",
-          "expiry_date": "2024-12-01",
-          "condition": "Valid on marked items only",
-          "coupon_type": "BOGO"
-        }
-      ],
-      "shop_Link": "https://technova.com",
-      "category": "Electronics",
-      "isSaleOn": false
-    },
-    {
-      "_id": "3c4d5e6f7g8h9i0j1a2b",
-      "brand_name": "FashionHub",
-      "rating": 4.2,
-      "description": "FashionHub brings you the latest trends at affordable prices.",
-      "brand_logo": "https://i.ibb.co.com/JpP6gF8/images.png",
-      "coupons": [
-        {
-          "coupon_code": "FASH30",
-          "description": "30% off on new arrivals",
-          "expiry_date": "2024-11-25",
-          "condition": "Applicable on select collections",
-          "coupon_type": "Percentage"
-        },
-        {
-          "coupon_code": "WELCOME15",
-          "description": "15% off for new customers",
-          "expiry_date": "2025-01-01",
-          "condition": "First-time users only",
-          "coupon_type": "Percentage"
-        }
-      ],
-      "shop_Link": "https://fashionhub.com",
-      "category": "Fashion",
-      "isSaleOn": true
-    },
-    {
-      "_id": "4d5e6f7g8h9i0j1a2b3c",
-      "brand_name": "BeautyMart",
-      "rating": 4.8,
-      "description": "Your go-to for all beauty and skincare needs.",
-      "brand_logo": "https://i.ibb.co.com/ZVJMmgH/images.png",
-      "coupons": [
-        {
-          "coupon_code": "BM25OFF",
-          "description": "25% discount on skincare products",
-          "expiry_date": "2024-12-15",
-          "condition": "Valid for orders over $30",
-          "coupon_type": "Percentage"
-        },
-        {
-          "coupon_code": "GIFT10",
-          "description": "Get a free gift with purchases over $100",
-          "expiry_date": "2024-12-31",
-          "condition": "While supplies last",
-          "coupon_type": "Gift"
-        }
-      ],
-      "shop_Link": "https://beautymart.com",
-      "category": "Beauty",
-      "isSaleOn": true
-    },
-    {
-      "_id": "5e6f7g8h9i0j1a2b3c4d",
-      "brand_name": "BookNest",
-      "rating": 4.6,
-      "description": "Explore a vast collection of books from various genres.",
-      "brand_logo": "https://i.ibb.co.com/KWfHQf9/ey-Jw-YXRo-Ijoid2-Vhcm-Vc-L2-Zpb-GVc-L1-Jy-MVFj-ZEJEZjlh-OTh-NYUt0-NGt-ILn-Bu-Zy-J9-weare-No-Yy82-FO.png",
-      "coupons": [
-        {
-          "coupon_code": "BOOK10",
-          "description": "10% off all books",
-          "expiry_date": "2024-11-20",
-          "condition": "Minimum order value $15",
-          "coupon_type": "Percentage"
-        },
-        {
-          "coupon_code": "FREESHIPBOOK",
-          "description": "Free shipping on orders over $40",
-          "expiry_date": "2024-11-30",
-          "condition": "Standard shipping only",
-          "coupon_type": "Shipping"
-        }
-      ],
-      "shop_Link": "https://booknest.com",
-      "category": "Books",
-      "isSaleOn": false
-    },
-    {
-      "_id": "6f7g8h9i0j1a2b3c4d5e",
-      "brand_name": "FitnessFirst",
-      "rating": 4.4,
-      "description": "All your fitness and gym needs in one place.",
-      "brand_logo": "https://i.ibb.co.com/mRwxhLn/mr-peanut.webp",
-      "coupons": [
-        {
-          "coupon_code": "GYM20",
-          "description": "20% off on gym equipment",
-          "expiry_date": "2024-12-10",
-          "condition": "Minimum spend $50",
-          "coupon_type": "Percentage"
-        },
-        {
-          "coupon_code": "PROTEIN5",
-          "description": "5% off on all protein supplements",
-          "expiry_date": "2025-01-01",
-          "condition": "No minimum spend",
-          "coupon_type": "Percentage"
-        }
-      ],
-      "shop_Link": "https://fitnessfirst.com",
-      "category": "Fitness",
-      "isSaleOn": true
-    },
-    {
-      "_id": "7g8h9i0j1a2b3c4d5e6f",
-      "brand_name": "GadgetWorld",
-      "rating": 4.3,
-      "description": "Get the best deals on the latest gadgets and electronics.",
-      "brand_logo": "https://i.ibb.co.com/qnGQD64/attachment-153693329.png",
-      "coupons": [
-        {
-          "coupon_code": "GADGET15",
-          "description": "15% off on selected gadgets",
-          "expiry_date": "2024-12-25",
-          "condition": "Applicable on orders above $100",
-          "coupon_type": "Percentage"
-        },
-        {
-          "coupon_code": "FREECASE",
-          "description": "Get a free phone case with any smartphone purchase",
-          "expiry_date": "2024-12-20",
-          "condition": "While stocks last",
-          "coupon_type": "Gift"
-        }
-      ],
-      "shop_Link": "https://gadgetworld.com",
-      "category": "Electronics",
-      "isSaleOn": false
-    }
+  {
+    "_id": "g1h2i3j4k5l6m7n8o9p0",
+    "brand_name": "Foodpanda",
+    "rating": 4.8,
+    "description": "Foodpanda is your go-to platform for ordering food and groceries online, offering fast delivery and great deals.",
+    "brand_logo": "https://i.ibb.co.com/ftPtsPY/channels4-profile.jpg",
+    "coupons": [
+      {
+        "coupon_code": "FPANDA100",
+        "description": "Get ৳100 off on your first order",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum order of ৳500",
+        "coupon_type": "Flat Discount"
+      },
+      {
+        "coupon_code": "FPANDADEL50",
+        "description": "Free delivery on orders above ৳300",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for new users only",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "FPANDACASH200",
+        "description": "Earn ৳200 cashback on grocery orders above ৳2000",
+        "expiry_date": "2024-12-31",
+        "condition": "Cashback will be credited to your Foodpanda wallet",
+        "coupon_type": "Cashback"
+      },
+      {
+        "coupon_code": "FPANDABOGO",
+        "description": "Buy 1, Get 1 Free on selected menu items",
+        "expiry_date": "2024-12-15",
+        "condition": "Applicable on participating restaurants only",
+        "coupon_type": "Offer"
+      }
+    ],
+    "shop_Link": "https://foodpanda.com.bd",
+    "category": "Food Delivery",
+    "isSaleOn": true
+  },  
+  {
+    "_id": "a1b2c3d4e5f6g7h8i9j0",
+    "brand_name": "Daraz",
+    "rating": 4.8,
+    "description": "Daraz is your one-stop online shopping destination offering a vast selection of products across multiple categories.",
+    "brand_logo": "https://i.ibb.co.com/J5cGJ7Q/images.png",
+    "coupons": [
+      {
+        "coupon_code": "DARAZ20",
+        "description": "Get 20% off on selected items",
+        "expiry_date": "2024-12-31",
+        "condition": "Applicable on a minimum spend of $50",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "DARAZSHIPFREE",
+        "description": "Enjoy free shipping on orders above $30",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for standard shipping within Pakistan",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop_Link": "https://daraz.com",
+    "category": "E-commerce",
+    "isSaleOn": true
+  },
+  {
+    "_id": "z1y2x3w4v5u6t7s8r9q0",
+    "brand_name": "Rokomari",
+    "rating": 4.7,
+    "description": "Rokomari is Bangladesh's leading online bookstore, offering a wide selection of books across various genres at affordable prices.",
+    "brand_logo": "https://i.ibb.co.com/xYksHv3/unnamed.png",
+    "coupons": [
+      {
+        "coupon_code": "ROKO10",
+        "description": "Enjoy 10% off on your first book purchase",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of ৳500",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "ROKOFREEDEL",
+        "description": "Free delivery on orders over ৳1000",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for standard shipping within Bangladesh",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "ROKO15",
+        "description": "Get 15% off on orders over ৳2000",
+        "expiry_date": "2024-12-15",
+        "condition": "Excludes academic textbooks",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "BUY1GET1",
+        "description": "Buy 1, Get 1 Free on selected novels",
+        "expiry_date": "2024-11-25",
+        "condition": "Applicable to selected titles only",
+        "coupon_type": "Offer"
+      },
+      {
+        "coupon_code": "ROKOCASHBACK",
+        "description": "Get ৳200 cashback on prepaid orders over ৳3000",
+        "expiry_date": "2024-12-31",
+        "condition": "Cashback will be added to your Rokomari wallet",
+        "coupon_type": "Cashback"
+      }
+    ],
+    "shop_Link": "https://rokomari.com",
+    "category": "Books",
+    "isSaleOn": true
+  },
+  {
+    "_id": "b1c2d3e4f5g6h7i8j9k0",
+    "brand_name": "Adjective BD",
+    "rating": 4.6,
+    "description": "Adjective BD is a premium clothing brand offering trendy and stylish apparel for men and women in Bangladesh.",
+    "brand_logo": "https://i.ibb.co.com/jgT6GGV/images.png",
+    "coupons": [
+      {
+        "coupon_code": "ADJ20",
+        "description": "Get 20% off on all winter collections",
+        "expiry_date": "2024-12-31",
+        "condition": "No minimum purchase required",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "ADJFREESHIP",
+        "description": "Free delivery on orders over ৳1500",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for standard shipping within Bangladesh",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "ADJNEW10",
+        "description": "10% off on your first purchase",
+        "expiry_date": "2024-12-31",
+        "condition": "First-time customers only",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "ADJSUMMER25",
+        "description": "Flat 25% off on summer collection",
+        "expiry_date": "2024-06-30",
+        "condition": "Applicable to summer apparel only",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "ADJCASHBACK500",
+        "description": "Get ৳500 cashback on orders above ৳5000",
+        "expiry_date": "2024-12-31",
+        "condition": "Cashback will be added to your account wallet",
+        "coupon_type": "Cashback"
+      }
+    ],
+    "shop_Link": "https://adjectivebd.com",
+    "category": "Clothing",
+    "isSaleOn": true
+  },
+  {
+    "_id": "c1d2e3f4g5h6i7j8k9l0",
+    "brand_name": "Finesse",
+    "rating": 4.8,
+    "description": "Finesse offers high-quality, luxurious fashion and lifestyle products tailored to perfection.",
+    "brand_logo": "https://i.ibb.co.com/dDYvYmv/images.png",
+    "coupons": [
+      {
+        "coupon_code": "FIN20OFF",
+        "description": "Get 20% off on all products",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of ৳3000",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "FINSHIP24",
+        "description": "Free delivery on orders over ৳2000",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for standard shipping",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "FINFIRST10",
+        "description": "10% off on your first order",
+        "expiry_date": "2024-12-31",
+        "condition": "First-time customers only",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "FINCASH500",
+        "description": "Get ৳500 cashback on orders over ৳5000",
+        "expiry_date": "2024-12-31",
+        "condition": "Cashback credited to your wallet",
+        "coupon_type": "Cashback"
+      }
+    ],
+    "shop_Link": "https://finesse.com",
+    "category": "Luxury Fashion",
+    "isSaleOn": true
+  },  
+  {
+    "_id": "e1f2g3h4i5j6k7l8m9n0",
+    "brand_name": "Othoba",
+    "rating": 4.6,
+    "description": "Othoba is one of Bangladesh's largest e-commerce platforms, offering a wide variety of products ranging from electronics to lifestyle goods.",
+    "brand_logo": "https://i.ibb.co.com/Cb8wyJp/images.jpg",
+    "coupons": [
+      {
+        "coupon_code": "OTHOBA10",
+        "description": "Get 10% off on your first purchase",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of ৳1000",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "OTHOBASHIP",
+        "description": "Enjoy free shipping on orders above ৳1500",
+        "expiry_date": "2024-11-30",
+        "condition": "Standard shipping within Bangladesh",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "OTHOBA200",
+        "description": "Get ৳200 cashback on purchases over ৳2000",
+        "expiry_date": "2024-12-31",
+        "condition": "Cashback credited to Othoba wallet",
+        "coupon_type": "Cashback"
+      }
+    ],
+    "shop_Link": "https://othoba.com",
+    "category": "E-commerce",
+    "isSaleOn": true
+  },  
+  {
+    "_id": "f1g2h3i4j5k6l7m8n9o0",
+    "brand_name": "Chaldal",
+    "rating": 4.7,
+    "description": "Chaldal is Bangladesh's leading online grocery store, delivering fresh groceries, household essentials, and more at your doorstep.",
+    "brand_logo": "https://i.ibb.co.com/D9G6ZZk/images.jpg",
+    "coupons": [
+      {
+        "coupon_code": "CHALDAL5",
+        "description": "Flat 5% off on your first order",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of ৳500",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "CHALDALDEL",
+        "description": "Free delivery on orders above ৳1000",
+        "expiry_date": "2024-11-30",
+        "condition": "Applies to standard delivery only",
+        "coupon_type": "Shipping"
+      },
+      {
+        "coupon_code": "CHALDAL300",
+        "description": "Get ৳300 cashback on orders over ৳3000",
+        "expiry_date": "2024-12-31",
+        "condition": "Cashback credited to your Chaldal wallet",
+        "coupon_type": "Cashback"
+      },
+      {
+        "coupon_code": "CHALDALFRUITS",
+        "description": "10% off on fresh fruits",
+        "expiry_date": "2024-12-15",
+        "condition": "Applicable on purchases above ৳800",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "CHALDALMEGA",
+        "description": "Save 15% on bulk purchases",
+        "expiry_date": "2024-12-31",
+        "condition": "Orders over ৳5000 only",
+        "coupon_type": "Percentage"
+      }
+    ],
+    "shop_Link": "https://chaldal.com",
+    "category": "Groceries",
+    "isSaleOn": true
+  },  
+  {
+    "_id": "1a2b3c4d5e6f7g8h9i0j",
+    "brand_name": "ShopEase",
+    "rating": 4.5,
+    "description": "ShopEase offers a variety of daily essentials at unbeatable prices.",
+    "brand_logo": "https://i.ibb.co.com/CbdtCvH/download.jpg",
+    "coupons": [
+      {
+        "coupon_code": "SE10OFF",
+        "description": "Get 10% off on your first purchase",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of $20",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "FREESHIP",
+        "description": "Free shipping on orders over $50",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid for standard shipping",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop_Link": "https://shopease.com",
+    "category": "Groceries",
+    "isSaleOn": true
+  },
+  {
+    "_id": "2b3c4d5e6f7g8h9i0j1a",
+    "brand_name": "TechNova",
+    "rating": 4.7,
+    "description": "TechNova is your destination for the latest tech gadgets and accessories.",
+    "brand_logo": "https://i.ibb.co.com/M9309dh/images.jpg",
+    "coupons": [
+      {
+        "coupon_code": "TN20SAVE",
+        "description": "Save 20% on all electronics",
+        "expiry_date": "2025-01-15",
+        "condition": "No minimum purchase",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "BOGOFREE",
+        "description": "Buy one, get one free on select items",
+        "expiry_date": "2024-12-01",
+        "condition": "Valid on marked items only",
+        "coupon_type": "BOGO"
+      }
+    ],
+    "shop_Link": "https://technova.com",
+    "category": "Electronics",
+    "isSaleOn": false
+  },
+  {
+    "_id": "3c4d5e6f7g8h9i0j1a2b",
+    "brand_name": "FashionHub",
+    "rating": 4.2,
+    "description": "FashionHub brings you the latest trends at affordable prices.",
+    "brand_logo": "https://i.ibb.co.com/JpP6gF8/images.png",
+    "coupons": [
+      {
+        "coupon_code": "FASH30",
+        "description": "30% off on new arrivals",
+        "expiry_date": "2024-11-25",
+        "condition": "Applicable on select collections",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "WELCOME15",
+        "description": "15% off for new customers",
+        "expiry_date": "2025-01-01",
+        "condition": "First-time users only",
+        "coupon_type": "Percentage"
+      }
+    ],
+    "shop_Link": "https://fashionhub.com",
+    "category": "Fashion",
+    "isSaleOn": true
+  },
+  {
+    "_id": "4d5e6f7g8h9i0j1a2b3c",
+    "brand_name": "BeautyMart",
+    "rating": 4.8,
+    "description": "Your go-to for all beauty and skincare needs.",
+    "brand_logo": "https://i.ibb.co.com/ZVJMmgH/images.png",
+    "coupons": [
+      {
+        "coupon_code": "BM25OFF",
+        "description": "25% discount on skincare products",
+        "expiry_date": "2024-12-15",
+        "condition": "Valid for orders over $30",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "GIFT10",
+        "description": "Get a free gift with purchases over $100",
+        "expiry_date": "2024-12-31",
+        "condition": "While supplies last",
+        "coupon_type": "Gift"
+      }
+    ],
+    "shop_Link": "https://beautymart.com",
+    "category": "Beauty",
+    "isSaleOn": true
+  },
+  {
+    "_id": "5e6f7g8h9i0j1a2b3c4d",
+    "brand_name": "BookNest",
+    "rating": 4.6,
+    "description": "Explore a vast collection of books from various genres.",
+    "brand_logo": "https://i.ibb.co.com/KWfHQf9/ey-Jw-YXRo-Ijoid2-Vhcm-Vc-L2-Zpb-GVc-L1-Jy-MVFj-ZEJEZjlh-OTh-NYUt0-NGt-ILn-Bu-Zy-J9-weare-No-Yy82-FO.png",
+    "coupons": [
+      {
+        "coupon_code": "BOOK10",
+        "description": "10% off all books",
+        "expiry_date": "2024-11-20",
+        "condition": "Minimum order value $15",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "FREESHIPBOOK",
+        "description": "Free shipping on orders over $40",
+        "expiry_date": "2024-11-30",
+        "condition": "Standard shipping only",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop_Link": "https://booknest.com",
+    "category": "Books",
+    "isSaleOn": false
+  },
+  {
+    "_id": "6f7g8h9i0j1a2b3c4d5e",
+    "brand_name": "FitnessFirst",
+    "rating": 4.4,
+    "description": "All your fitness and gym needs in one place.",
+    "brand_logo": "https://i.ibb.co.com/mRwxhLn/mr-peanut.webp",
+    "coupons": [
+      {
+        "coupon_code": "GYM20",
+        "description": "20% off on gym equipment",
+        "expiry_date": "2024-12-10",
+        "condition": "Minimum spend $50",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "PROTEIN5",
+        "description": "5% off on all protein supplements",
+        "expiry_date": "2025-01-01",
+        "condition": "No minimum spend",
+        "coupon_type": "Percentage"
+      }
+    ],
+    "shop_Link": "https://fitnessfirst.com",
+    "category": "Fitness",
+    "isSaleOn": true
+  },
+  {
+    "_id": "7g8h9i0j1a2b3c4d5e6f",
+    "brand_name": "GadgetWorld",
+    "rating": 4.3,
+    "description": "Get the best deals on the latest gadgets and electronics.",
+    "brand_logo": "https://i.ibb.co.com/qnGQD64/attachment-153693329.png",
+    "coupons": [
+      {
+        "coupon_code": "GADGET15",
+        "description": "15% off on selected gadgets",
+        "expiry_date": "2024-12-25",
+        "condition": "Applicable on orders above $100",
+        "coupon_type": "Percentage"
+      },
+      {
+        "coupon_code": "FREECASE",
+        "description": "Get a free phone case with any smartphone purchase",
+        "expiry_date": "2024-12-20",
+        "condition": "While stocks last",
+        "coupon_type": "Gift"
+      }
+    ],
+    "shop_Link": "https://gadgetworld.com",
+    "category": "Electronics",
+    "isSaleOn": false
+  }
 ]

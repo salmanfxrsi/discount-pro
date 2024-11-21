@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 const Stat = ({ data, onSaleShop }) => {
   return (
-    <div className="stats shadow w-full">
+    <div className="stats shadow w-full bg-winter">
       <div className="stat">
-        <div className="stat-figure text-black">
+        <div className="stat-figure text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -19,13 +19,13 @@ const Stat = ({ data, onSaleShop }) => {
             ></path>
           </svg>
         </div>
-        <div className="stat-title">New Users</div>
-        <div className="stat-value">4200</div>
-        <div className="stat-desc">Jan 1st - Feb 1st</div>
+        <div className="stat-title text-white">New Users</div>
+        <div className="stat-value text-white">4200</div>
+        <div className="stat-desc text-white">Jan 1st - Feb 1st</div>
       </div>
 
       <div className="stat">
-        <div className="stat-figure text-black">
+        <div className="stat-figure text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -40,13 +40,12 @@ const Stat = ({ data, onSaleShop }) => {
             ></path>
           </svg>
         </div>
-        <div className="stat-title">On Sale</div>
-        <div className="stat-value">{onSaleShop.length}</div>
-        <div className="stat-desc">↗︎ 400 (22%)</div>
+        <div className="stat-title text-white">On Sale</div>
+        <div className="stat-value text-white">{onSaleShop.length}</div>
       </div>
 
       <div className="stat">
-        <div className="stat-figure text-black">
+        <div className="stat-figure text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,8 +60,8 @@ const Stat = ({ data, onSaleShop }) => {
             ></path>
           </svg>
         </div>
-        <div className="stat-title">Total Brands</div>
-        <div className="stat-value">{data.length}</div>
+        <div className="stat-title text-white">Total Brands</div>
+        <div className="stat-value text-white">{data.length}</div>
       </div>
     </div>
   );

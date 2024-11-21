@@ -85,6 +85,9 @@ const Navbar = () => {
               <img className="w-12 h-12 rounded-full" src={user.photoURL} />
             </Link>
           </div>}
+          {user && <div className="hidden md:block">
+            <p className="ml-4 lg:ml-0 font-black text-white">{user.email}</p>
+          </div>}
           <div>
             {!user ? (
               <Link to={"/login"} className="btn">

@@ -66,7 +66,7 @@ const UpdateProfilePage = () => {
             type="submit"
             className="w-full px-4 py-2 text-white bg-[#2C8BBF] rounded-md hover:bg-[#2c8cbfbe] focus:bg-[#2c8cbfbe]"
           >
-            Update Now
+            Update User Information
           </button>
         </form>
       </div>
