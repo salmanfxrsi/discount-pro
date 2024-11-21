@@ -81,8 +81,8 @@ const Navbar = () => {
         </div>
         <div className="navbar-end flex gap-3">
           {user && <div className="avatar online">
-            <Link to={"/profile"} className="w-12 rounded-full">
-              <img className="w-12 rounded-full" src={user.photoURL} />
+            <Link to={"/profile"} className="w-12 h-12 rounded-full">
+              <img className="w-12 h-12 rounded-full" src={user.photoURL} />
             </Link>
           </div>}
           <div>

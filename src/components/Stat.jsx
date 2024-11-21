@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Stat = ({ data, onSaleShop }) => {
   return (
     <div className="stats shadow w-full">
@@ -65,5 +67,10 @@ const Stat = ({ data, onSaleShop }) => {
     </div>
   );
 };
+
+Stat.propTypes = {
+    data: PropTypes.array,
+    onSaleShop: PropTypes.array
+}
 
 export default Stat;

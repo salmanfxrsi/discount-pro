@@ -6,7 +6,7 @@
 ---
 
 ## **Live URL**  
-[**Access Discount PRO here**](#) *([Replace with your live site URL once deployed](https://discount-pro-7a767.firebaseapp.com/))*  
+[**Access Discount PRO here**](https://discount-pro-7a767.firebaseapp.com/) 
 
 ---
 

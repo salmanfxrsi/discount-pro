@@ -4,21 +4,25 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const UpdateProfilePage = () => {
-  const { manageProfile } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const { manageProfile, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleUpdateProfile = (e) => {
-    e.preventDefault()
-    const name = e.target.name.value
-    const image = e.target.image.value
-    manageProfile(name,image)
-    .then(() => {
-        e.target.reset();
-        toast.success("Profile Updated",{
-          className: "custom-toast"
-        })
-        navigate("/profile");
-    })
+    e.preventDefault();
+    const name = e.target.name.value;
+    const image = e.target.image.value;
+    manageProfile(name, image).then(() => {
+      setUser((prevUser) => ({
+        ...prevUser,
+        displayName: name,
+        photoURL: image,
+      }));
+      e.target.reset();
+      toast.success("Profile Updated", {
+        className: "custom-toast",
+      });
+      navigate("/profile");
+    });
   };
 
   return (

@@ -10,6 +10,7 @@ const LoginPage = () => {
   const { googleSignIn,handleLogin,setUser } = useContext(AuthContext);
   const [error,setError] = useState("");
   const navigate = useNavigate();
+  const [email,setEmail] = useState("");
 
   const handleEmailLogin = (e) => {
     e.preventDefault();
@@ -42,9 +43,14 @@ const LoginPage = () => {
       navigate("/")
     })
     .catch((error) => {
-      console.log(error);
+      error(error.message);
     });
   }
+
+
+  const handleForgetPassword = () => {
+    navigate("/forget-password",{ state : { email } })
+  } 
 
 
   return (
@@ -64,6 +70,8 @@ const LoginPage = () => {
               name="email"
               required
               placeholder="Enter your email"
+              value={email}
+              onChange={e =>setEmail(e.target.value)}
               className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-200 border rounded-md focus:outline-none focus:ring focus:ring-indigo-300"
             />
           </div>
@@ -104,9 +112,9 @@ const LoginPage = () => {
         </form>
         <div className="mt-4 flex items-center justify-between">
           <span className="text-sm text-gray-600">Forgot your password?</span>
-          <Link to={"/forget-password"} className="text-sm text-indigo-500 hover:underline focus:outline-none">
+          <button onClick={handleForgetPassword} className="text-sm text-indigo-500 hover:underline focus:outline-none">
             Reset Password
-          </Link>
+          </button>
         </div>
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">

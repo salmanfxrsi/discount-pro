@@ -3,10 +3,11 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
+import { FaGoogle } from "react-icons/fa";
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, setUser, manageProfile } = useContext(AuthContext);
+  const { createUser, setUser, googleSignIn} = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
@@ -18,6 +19,8 @@ const RegistrationPage = () => {
     const password = form.get("password");
     const name = form.get("name");
     const image = form.get("image");
+    setError("")
+    setSuccess("")
 
     // Password must be more more than 5 Letters
     if (password.length < 6) {
@@ -34,9 +37,7 @@ const RegistrationPage = () => {
 
     createUser(email, password)
       .then((result) => {
-        manageProfile(name, image);
-        setUser(result.user);
-        setError("");
+        setUser({...result.user,displayName:name,photoURL:image})
         e.target.reset();
         setSuccess("Registered Successfully");
         toast.success("Welcome! Registration successful",{
@@ -44,10 +45,24 @@ const RegistrationPage = () => {
         })
         navigate("/");
       })
-      .then((error) => {
+      .catch((error) => {
         setError(error.message);
       });
   };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+    .then((result) => {
+      setUser(result.user);
+      toast.success("Welcome! Registration successful",{
+        className: "custom-toast"
+      })
+      navigate("/")
+    })
+    .catch((error) => {
+      setError(error.message);
+    });
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 winter-snow">
@@ -149,6 +164,23 @@ const RegistrationPage = () => {
           </button>
         </form>
 
+        <div className="relative my-6">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-300"></div>
+          </div>
+          <div className="relative flex justify-center text-sm text-gray-600">
+            <span className="px-2 font-black">OR</span>
+          </div>
+        </div>
+        <div className="flex flex-col gap-2">
+          <button
+            onClick={handleGoogleSignIn}
+            className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-red-500 rounded-md hover:bg-red-600"
+          >
+            <FaGoogle className="mr-2" />
+            Login with Google
+          </button>
+        </div>
         {/* Redirect to Login */}
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">

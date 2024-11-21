@@ -1,24 +1,31 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { useLocation } from "react-router-dom";
 
 const ForgetPasswordPage = () => {
-    const { forgetPassword } = useContext(AuthContext);
-    const [command,setCommand] = useState("");
-    const [error,setError] = useState("");
+  const { forgetPassword } = useContext(AuthContext);
+  const [command, setCommand] = useState("");
+  const [error, setError] = useState("");
+  const location = useLocation();
+  const [email, setEmail] = useState(location.state?.email || "");
+  const { handleSignOut } = useContext(AuthContext);
 
   const handleForgetPassword = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const email = e.target.email.value;
-    setError("")
-    setCommand("")
+    setError("");
+    setCommand("");
 
     forgetPassword(email)
-    .then(()=>{
-        setCommand("Email sent! Check your email to reset your password.")
-    })
-    .catch(error => {
-        setError(error.message)
-    })
+      .then(() => {
+        e.target.reset();
+        setCommand("Email sent! Check your email to reset your password.");
+        window.location.href = "https://mail.google.com/";
+        handleSignOut()
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
@@ -38,6 +45,8 @@ const ForgetPasswordPage = () => {
             <input
               type="email"
               name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               required
               autoComplete="off"
               placeholder="Enter your email"
@@ -45,8 +54,12 @@ const ForgetPasswordPage = () => {
             />
           </div>
           {/* Command And Error Message */}
-          <p className="text-green-500 font-black text-sm mb-3">{command && command}</p>
-          <p className="text-red-500 font-black text-sm mb-3">{error && error}</p>
+          <p className="text-green-500 font-black text-sm mb-3">
+            {command && command}
+          </p>
+          <p className="text-red-500 font-black text-sm mb-3">
+            {error && error}
+          </p>
           <button
             type="submit"
             className="w-full px-4 py-2 text-white bg-[#2C8BBF] rounded-md hover:bg-[#2c8cbfbe] focus:outline-none focus:bg-[#2c8cbfbe]"
