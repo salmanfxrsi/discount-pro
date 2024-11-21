@@ -7,7 +7,7 @@ import { FaGoogle } from "react-icons/fa";
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { createUser, setUser, googleSignIn} = useContext(AuthContext);
+  const { createUser, setUser, googleSignIn, manageProfile} = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
@@ -38,6 +38,7 @@ const RegistrationPage = () => {
     createUser(email, password)
       .then((result) => {
         setUser({...result.user,displayName:name,photoURL:image})
+        manageProfile(name,image)
         e.target.reset();
         setSuccess("Registered Successfully");
         toast.success("Welcome! Registration successful",{
