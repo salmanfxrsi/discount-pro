@@ -79,16 +79,30 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <div className="menu menu-horizontal flex gap-3">{links}</div>
         </div>
-        <div className="navbar-end">
-          {!user ? (
-            <Link to={"/login"} className="btn">
-              Login
+        <div className="navbar-end flex gap-3">
+          {user && <div className="avatar online">
+            <Link to={"/profile"} className="w-12 rounded-full">
+              <img className="w-12 rounded-full" src={user.photoURL} />
             </Link>
-          ) : (
-            <button onClick={handleSignOut} className="btn">
-              Logout
-            </button>
-          )}
+          </div>}
+          <div>
+            {!user ? (
+              <Link to={"/login"} className="btn">
+                Login
+              </Link>
+            ) : (
+              <button onClick={handleSignOut} className="btn">
+                Logout
+              </button>
+            )}
+          </div>
+          <div>
+            {!user && (
+              <Link to={"/registration"} className="btn">
+                Registration
+              </Link>
+            )}
+          </div>
         </div>
       </div>
       {user && (

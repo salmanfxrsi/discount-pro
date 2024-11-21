@@ -97,16 +97,16 @@ const LoginPage = () => {
           <p className="text-red-500 font-black text-sm mb-3">{error && error}</p>
           <button
             type="submit"
-            className="w-full px-4 py-2 text-white bg-indigo-500 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+            className="w-full px-4 py-2 text-white bg-[#2C8BBF] rounded-md hover:bg-[#2c8cbfbe] focus:outline-none focus:bg-[#2c8cbfbe]"
           >
             Login
           </button>
         </form>
         <div className="mt-4 flex items-center justify-between">
           <span className="text-sm text-gray-600">Forgot your password?</span>
-          <button className="text-sm text-indigo-500 hover:underline focus:outline-none">
+          <Link to={"/forget-password"} className="text-sm text-indigo-500 hover:underline focus:outline-none">
             Reset Password
-          </button>
+          </Link>
         </div>
         <div className="relative my-6">
           <div className="absolute inset-0 flex items-center">
