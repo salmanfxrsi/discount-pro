@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -11,6 +11,7 @@ const LoginPage = () => {
   const [error,setError] = useState("");
   const navigate = useNavigate();
   const [email,setEmail] = useState("");
+  const location = useLocation();
 
   const handleEmailLogin = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const LoginPage = () => {
         toast.success("Welcome back! Login successful",{
           className: "custom-toast"
         })
-        navigate("/");
+        navigate(location?.state ? location.state : "/");
         e.target.reset();
     })
     .catch(error => {
@@ -40,7 +41,7 @@ const LoginPage = () => {
       toast.success("Welcome back! Login successful",{
         className: "custom-toast"
       })
-      navigate("/")
+      navigate(location?.state ? location.state : "/");
     })
     .catch((error) => {
       error(error.message);
